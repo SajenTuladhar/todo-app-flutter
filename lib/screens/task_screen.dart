@@ -1,0 +1,77 @@
+import 'package:flutter/material.dart';
+
+class TaskScreen extends StatelessWidget {
+  const TaskScreen({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: Colors.grey.shade900,
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {},
+        backgroundColor: Colors.grey.shade900,
+        elevation: 3,
+        child: Icon(
+          Icons.add_circle_sharp,
+          size: 26,
+          color: Colors.white70,
+        ),
+      ),
+      body: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Padding(
+            padding: const EdgeInsets.only(
+              top: 60,
+              bottom: 30,
+              left: 30,
+              right: 30,
+            ),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                CircleAvatar(
+                  radius: 30,
+                  backgroundColor: Colors.white70,
+                  child: Icon(
+                    Icons.view_list_rounded,
+                    color: Colors.grey.shade900,
+                    size: 28,
+                  ),
+                ),
+                SizedBox(height: 30),
+                Text(
+                  'To Do\'s',
+                  style: TextStyle(
+                    color: Colors.white70,
+                    fontSize: 50,
+                    fontWeight: FontWeight.w700,
+                  ),
+                ),
+                Text(
+                  '18 Tasks',
+                  style: TextStyle(
+                    color: Colors.white70,
+                    fontSize: 16,
+                    fontWeight: FontWeight.w300,
+                  ),
+                ),
+              ],
+            ),
+          ),
+          Expanded(
+            child: Container(
+              decoration: BoxDecoration(
+                color: Colors.white70,
+                borderRadius: BorderRadius.only(
+                  topLeft: Radius.circular(24),
+                  topRight: Radius.circular(24),
+                ),
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
