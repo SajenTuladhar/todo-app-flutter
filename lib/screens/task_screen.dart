@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:todo_app/models/task_data.dart';
 import 'package:todo_app/widgets/task_list.dart';
 import 'package:todo_app/screens/add_task_screen.dart';
+
 import 'package:provider/provider.dart';
 
 class TaskScreen extends StatelessWidget {
@@ -16,10 +17,7 @@ class TaskScreen extends StatelessWidget {
           showModalBottomSheet(
             isScrollControlled: true,
             context: context,
-            builder: (context) => AddTaskScreen(addTaskcallback: (newTaskTitle) {
-              //  
-              Navigator.pop(context);
-            },),
+            builder: (context) => AddTaskScreen(),
           );
         },
         backgroundColor: Colors.grey.shade900,
@@ -72,7 +70,7 @@ class TaskScreen extends StatelessWidget {
             child: Container(
               padding: EdgeInsets.symmetric(horizontal: 20, vertical: 12),
               decoration: BoxDecoration(
-                color: Colors.white70,
+                color: const Color.fromARGB(255, 207, 207, 207),
                 borderRadius: BorderRadius.only(
                   topLeft: Radius.circular(24),
                   topRight: Radius.circular(24),
